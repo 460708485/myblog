@@ -21,13 +21,16 @@
                            class="form-control input-control clearfix"
                            placeholder="姓名 (*)"
                     />
-                    <input type="email" name="mail" id="mail" class="form-control input-control clearfix"
+                    <input type="email" name="mail" id="mail"
+                           class="form-control input-control clearfix"
                            placeholder="邮箱 (*)"
                     />
-                    <input type="url" name="url" id="url" class="form-control input-control clearfix"
+                    <input type="url" name="url" id="url"
+                           class="form-control input-control clearfix"
                            placeholder="网址 (http://)"
                     />
-                    <textarea name="text" id="textarea" class="form-control" placeholder="以上信息可以为空,评论不能为空哦!"
+                    <textarea name="text" id="textarea" class="form-control"
+                              placeholder="以上信息可以为空,评论不能为空哦!"
                               required="required" minlength="5"
                               maxlength="2000"></textarea>
                     <button type="submit" class="submit" id="misubmit">提交</button>
@@ -40,7 +43,8 @@
             <div th:if="${comments}">
                 <ol class="comment-list">
                     <th:block th:each="comment :${comments.list}">
-                        <li th:id="'li-comment-'+${comment.coid}" class="comment-body comment-parent comment-odd">
+                        <li th:id="'li-comment-'+${comment.coid}"
+                            class="comment-body comment-parent comment-odd">
                             <div th:id="'comment-'+${comment.coid}">
                                 <div class="comment-view" onclick="">
                                     <div class="comment-header">
@@ -59,7 +63,8 @@
                                         <p th:utext="${commons.article(comment.content)}"></p>
                                     </div>
                                     <div class="comment-meta">
-                                        <time class="comment-time" th:text="${commons.fmtdate(comment.created)}"></time>
+                                        <time class="comment-time"
+                                              th:text="${commons.fmtdate(comment.created)}"></time>
                                         <span class="comment-reply">
                             </span>
                                     </div>
@@ -71,15 +76,18 @@
                 <div class="lists-navigator clearfix">
                     <ol class="page-navigator">
                         <th:block th:if="${comments.hasPreviousPage}">
-                            <li class="prev"><a th:href="'?cp='+${comments.prePage}+'#comments'">←</a></li>
+                            <li class="prev"><a
+                                    th:href="'?cp='+${comments.prePage}+'#comments'">←</a></li>
                         </th:block>
                         <th:block th:each="navIndex : ${comments.navigatepageNums}">
                             <li th:class="${comments.pageNum}==${navIndex}?'current':''"><a
-                                    th:href="'?cp='+${navIndex}+'#comments'" th:text="${navIndex}"></a>
+                                    th:href="'?cp='+${navIndex}+'#comments'"
+                                    th:text="${navIndex}"></a>
                             </li>
                         </th:block>
                         <th:block th:if="${comments.hasNextPage}">
-                            <li class="next"><a th:href="'?cp='+${comments.nextPage}+'#comments'">→</a></li>
+                            <li class="next"><a
+                                    th:href="'?cp='+${comments.nextPage}+'#comments'">→</a></li>
                         </th:block>
                     </ol>
 

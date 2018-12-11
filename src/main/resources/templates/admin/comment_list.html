@@ -29,12 +29,14 @@
                                 <tr th:attr="cid=${comment.coid}">
                                     <td>
                                         <a th:href="@{${commons.site_url('/article/')}+${comment.cid}+'#comments'}"
-                                           target="_blank" th:utext="${commons.article(comment.content)}"></a>
+                                           target="_blank"
+                                           th:utext="${commons.article(comment.content)}"></a>
                                     </td>
                                     <td th:text="${comment.author}"></td>
                                     <td th:text="${commons.fmtdate(comment.created, 'yyyy-MM-dd HH:mm:ss')}"></td>
                                     <td th:text="${comment.mail}"></td>
-                                    <td><a th:href="@{${comment.url}}" target="_blank" th:text="${comment.url}"></a>
+                                    <td><a th:href="@{${comment.url}}" target="_blank"
+                                           th:text="${comment.url}"></a>
                                     </td>
                                     <td>
                                         <th:block th:if="${comment.status == 'approved'}">
@@ -51,7 +53,8 @@
                                                class="btn btn-danger btn-sm waves-effect waves-light m-b-5"><i
                                                     class="fa fa-trash-o"></i> <span>通过</span></a>
                                         </th:block>
-                                        <a href="javascript:void(0)" th:onclick="'delComment('+${comment.coid}+');'"
+                                        <a href="javascript:void(0)"
+                                           th:onclick="'delComment('+${comment.coid}+');'"
                                            class="btn btn-danger btn-sm waves-effect waves-light m-b-5"><i
                                                 class="fa fa-trash-o"></i> <span>删除</span></a>
                                     </td>
@@ -104,6 +107,7 @@
             }
         });
     }
+
     /*]]>*/
 </script>
 </body>

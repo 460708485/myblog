@@ -1,3 +1,6 @@
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
 ### STS ###
 .apt_generated
 .classpath
@@ -5,6 +8,7 @@
 .project
 .settings
 .springBeans
+.sts4-cache
 
 ### IntelliJ IDEA ###
 .idea
@@ -13,16 +17,9 @@
 *.ipr
 
 ### NetBeans ###
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
-
-###my own###
-logs
-upload
-target
-tale.sql
-*.md
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/

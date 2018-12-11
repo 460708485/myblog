@@ -4,11 +4,13 @@ import com.my.blog.website.modal.Vo.RelationshipVoExample;
 import com.my.blog.website.modal.Vo.RelationshipVoKey;
 import com.my.blog.website.service.IRelationshipService;
 import com.my.blog.website.dao.RelationshipVoMapper;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+
 import java.util.List;
 
 /**
@@ -54,7 +56,7 @@ public class RelationshipServiceImpl implements IRelationshipService {
 
     @Override
     public Long countById(Integer cid, Integer mid) {
-        LOGGER.debug("Enter countById method:cid={},mid={}",cid,mid);
+        LOGGER.debug("Enter countById method:cid={},mid={}", cid, mid);
         RelationshipVoExample relationshipVoExample = new RelationshipVoExample();
         RelationshipVoExample.Criteria criteria = relationshipVoExample.createCriteria();
         if (cid != null) {
@@ -64,7 +66,7 @@ public class RelationshipServiceImpl implements IRelationshipService {
             criteria.andMidEqualTo(mid);
         }
         long num = relationshipVoMapper.countByExample(relationshipVoExample);
-        LOGGER.debug("Exit countById method return num={}",num);
+        LOGGER.debug("Exit countById method return num={}", num);
         return num;
     }
 }

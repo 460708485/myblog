@@ -142,7 +142,10 @@
             //initializing nicescroll
             MoltranApp.prototype.initNiceScrollPlugin = function () {
                 //You can change the color of scroll bar here
-                $.fn.niceScroll && $(".nicescroll").niceScroll({cursorcolor: '#9d9ea5', cursorborderradius: '0px'});
+                $.fn.niceScroll && $(".nicescroll").niceScroll({
+                    cursorcolor: '#9d9ea5',
+                    cursorborderradius: '0px'
+                });
             },
 
             //on doc load
@@ -204,6 +207,7 @@ function executeFunctionByName(functionName, context /*, args */) {
     }
     return context[func].apply(this, args);
 }
+
 var w, h, dw, dh;
 var changeptype = function () {
     w = $(window).width();

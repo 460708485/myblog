@@ -4,6 +4,7 @@ import com.my.blog.website.exception.TipException;
 import com.my.blog.website.constant.WebConst;
 import com.my.blog.website.controller.admin.AttachController;
 import com.my.blog.website.modal.Vo.UserVo;
+
 import org.apache.commons.lang3.StringUtils;
 import org.commonmark.node.Node;
 import org.commonmark.parser.Parser;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
+
 import java.awt.*;
 import java.io.*;
 import java.security.MessageDigest;
@@ -267,7 +269,7 @@ public class TaleUtils {
             boolean isSSL = false;
             Cookie cookie = new Cookie(WebConst.USER_IN_COOKIE, val);
             cookie.setPath("/");
-            cookie.setMaxAge(60*30);
+            cookie.setMaxAge(60 * 30);
             cookie.setSecure(isSSL);
             response.addCookie(cookie);
         } catch (Exception e) {

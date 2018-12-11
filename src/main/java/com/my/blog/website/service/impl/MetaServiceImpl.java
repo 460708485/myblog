@@ -12,12 +12,14 @@ import com.my.blog.website.dao.MetaVoMapper;
 import com.my.blog.website.modal.Vo.ContentVo;
 import com.my.blog.website.modal.Vo.MetaVoExample;
 import com.my.blog.website.service.IContentService;
+
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -127,7 +129,7 @@ public class MetaServiceImpl implements IMetaService {
                     metas.setMid(mid);
                     metaDao.updateByPrimaryKeySelective(metas);
 //                    更新原有文章的categories
-                    contentService.updateCategory(original.getName(),name);
+                    contentService.updateCategory(original.getName(), name);
                 } else {
                     metas.setType(type);
                     metaDao.insertSelective(metas);

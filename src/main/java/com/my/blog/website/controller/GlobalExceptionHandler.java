@@ -1,6 +1,7 @@
 package com.my.blog.website.controller;
 
 import com.my.blog.website.exception.TipException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -15,15 +16,15 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(value = TipException.class)
     public String tipException(Exception e) {
-        LOGGER.error("find exception:e={}",e.getMessage());
+        LOGGER.error("find exception:e={}", e.getMessage());
         e.printStackTrace();
         return "comm/error_500";
     }
 
 
     @ExceptionHandler(value = Exception.class)
-    public String exception(Exception e){
-        LOGGER.error("find exception:e={}",e.getMessage());
+    public String exception(Exception e) {
+        LOGGER.error("find exception:e={}", e.getMessage());
         e.printStackTrace();
         return "comm/error_404";
     }

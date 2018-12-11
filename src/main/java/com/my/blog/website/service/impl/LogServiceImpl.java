@@ -7,11 +7,13 @@ import com.my.blog.website.utils.DateKit;
 import com.my.blog.website.constant.WebConst;
 import com.my.blog.website.modal.Vo.LogVo;
 import com.my.blog.website.modal.Vo.LogVoExample;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+
 import java.util.List;
 
 /**
@@ -43,7 +45,7 @@ public class LogServiceImpl implements ILogService {
 
     @Override
     public List<LogVo> getLogs(int page, int limit) {
-        LOGGER.debug("Enter getLogs method:page={},linit={}",page,limit);
+        LOGGER.debug("Enter getLogs method:page={},linit={}", page, limit);
         if (page <= 0) {
             page = 1;
         }
